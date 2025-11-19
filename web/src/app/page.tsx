@@ -1,18 +1,30 @@
-"use client"
+// src/app/page.tsx
+"use client";
 
-import Link from "next/link"
+import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Lucas Workspace</h1>
-      <p>Bem-vindo ao seu hub de serviços.</p>
+    <section className="p-6 max-w-6xl mx-auto">
+      <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
+      <p className="mb-6 text-gray-600">Painel central do workspace.</p>
 
-      <ul style={{ marginTop: "1rem" }}>
-        <li><Link href="/portfolio">Portfólio (público)</Link></li>
-        <li><Link href="/streaming">Streaming Service</Link></li>
-        <li><Link href="/news">News Service</Link></li>
-      </ul>
-    </main>
-  )
+      <div className="grid gap-4 md:grid-cols-3">
+        <Link href="/streaming" className="border p-4 rounded-lg hover:shadow-md">
+          <h3 className="font-semibold">Streaming</h3>
+          <p className="text-sm text-gray-500">Serviço de streaming (filho)</p>
+        </Link>
+
+        <Link href="/news" className="border p-4 rounded-lg hover:shadow-md">
+          <h3 className="font-semibold">News</h3>
+          <p className="text-sm text-gray-500">Serviço de notícias (filho)</p>
+        </Link>
+
+        <Link href="/portfolio" className="border p-4 rounded-lg hover:shadow-md">
+          <h3 className="font-semibold">Portfólio</h3>
+          <p className="text-sm text-gray-500">Página pública</p>
+        </Link>
+      </div>
+    </section>
+  );
 }
